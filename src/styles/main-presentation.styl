@@ -2,9 +2,9 @@
 
 // variables!
 
-slide_width = 640px
+slide_width = 100%
 slide_height = 480px
-slide_background = #eaeaea
+slide_background = #fff
 
 slide_transition_length = .6s
 slide_transition_easing = ease
@@ -33,9 +33,10 @@ bullet_transition_translate_x = 16px
 
 // bespoke.js layout styles
 
-article
+article#presentation
   transition: background slide_transition_length slide_transition_easing
   display: none
+  font-size: 1.8em
   &.bespoke-parent
     display: block
     position: absolute
@@ -48,6 +49,7 @@ article
       overflow: visible
       position: static
     perspective: 600px
+    margin-top: 30px
 
 .bespoke-slide
   transition:
@@ -158,8 +160,6 @@ code
 // content styles
 
 body
-  font-family: helvetica, arial, sans-serif
-  font-size: 18px
   color: #404040
 
 h1
@@ -186,7 +186,7 @@ hr
 ul
   list-style: none
 
-li
+section>li
   margin-bottom: 12px
 
 p

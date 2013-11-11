@@ -1,4 +1,3 @@
-/*
 bespoke.horizontal.from('article', {
   bullets: 'li, .bullet',
   scale: true,
@@ -6,4 +5,3 @@ bespoke.horizontal.from('article', {
   progress: true,
   state: true
 });
-*/
