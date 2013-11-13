@@ -1,0 +1,95 @@
+include presentation-header
+
+include menu
+
+article#presentation
+	section
+		h1 Pengenalan Kontrol Versi
+		p Proyek Kolaborasi TI
+
+	section
+		h2 Apa itu Kontrol Versi?
+		img(src="images/version-control.png")
+
+	section
+		h2 Kenapa Kontrol Versi?
+		img(src="images/phd101212s.png")
+
+	section
+		h2 Versi Non Teknologi
+		img(src="images/doc-vault.jpg")
+
+	section
+		h2.bullet Peran Kontrol Versi
+		hr
+		ul
+			li Menyimpan sejarah perubahan data
+			li Manajemen Revisi (pemberian nama, penanda rilis, dst)
+			li Manajemen penggabungan cabang
+
+	section
+		h2.bullet Implementasi Kontrol Versi
+		hr
+		ul
+			li Sebuah Software Terpisah
+			li Integrasi dengan Software Lain
+
+	section
+		h2 Kontrol Versi sebagai Software Terpisah
+		h3
+			| Contohnya: <a href="http://subversion.apache.org/">svn</a>, 
+			|		   <a href="http://mercurial.selenic.com/">hg</a>, 
+			|		   <a href="http://git-scm.com/">git</a>, 
+			|		   <a href="http://bazaar.canonical.com/en/">bzr</a>
+
+	section
+		h2 Kontrol Versi sebagai Software Terpisah
+		p Biasanya CLI, tetapi ada juga yang memiliki GUI
+		img(src="images/sourcetree.png")
+
+	section
+		h2 Kontrol Versi Terintegrasi
+		p Biasanya langsung menjadi fitur dari aplikasi
+		img(src="images/MediaWiki.png")
+		p Gambar: <a href="http://en.wikipedia.org/w/index.php?title=Revision_control&action=history">Kontrol Versi Wikipedia</a>
+
+	section
+		h3 Yang Dibahas:
+		h2 Kontrol Versi sebagai Software Terpisah
+		p Tepatnya: Git
+
+	section
+		h2.bullet Jenis-Jenis Kontrol Versi
+		hr
+		ul
+			li Terpusat
+			li Terdistribusi
+
+	section
+		h2 Kontrol Versi Terpusat
+		img(src="images/centralized-model.png")
+		p Contohnya: svn, cvs
+
+	section
+		h2.bullet Ciri Khas Kontrol Versi Terpusat
+		hr
+		ul
+			li Arsitektur Client-Server
+			li Konsekuensi: harus ada server untuk dapat menggunakan sistem
+			li Terdapat satu data dan sejarah data yang "benar"
+
+	section
+		h2 Kontrol Versi Terdistribusi
+		img(src="images/decentralized-model.png")
+		p Contohnya: git, hg, bzr
+
+	section
+		h2.bullet Ciri Khas Kontrol Versi Terdistribusi
+		hr
+		ul
+			li Tidak ada satu data dan sejarah data yang "benar"
+			li Setiap pengguna sistem memiliki kopi keseluruhan data dan sejarahnya
+			li Tidak memerlukan server untuk menggunakan sistem
+
+include presentation-footer
+include main-footer
