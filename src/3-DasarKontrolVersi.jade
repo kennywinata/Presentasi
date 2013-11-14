@@ -1,0 +1,73 @@
+include presentation-header
+
+include menu
+
+article#presentation
+	section
+		h1 Dasar Kontrol Versi
+		p Teknik Kolaborasi TI
+
+	section
+		h2 Bekerja dengan Kontrol Versi (Git)
+		img.big(src="images/GitFlow.png")
+
+	section
+		h2.bullet Wait, WHAT?!
+		ul
+			li Repository?
+			li Create?
+			li Clone?
+			li Commit?
+			li Pull?
+			li Push?
+
+	section
+		h2 Repository
+		img.big(src="images/repository-building.jpg")
+
+	section
+		h2 Repository
+		blockquote.
+			Tempat penyimpanan <strong>seluruh</strong> data
+			yang akan diatur oleh Kontrol Versi. Seluruh file
+			maupun struktur direktori yang akan dikontrol 
+			disimpan di sini.
+
+	section
+		h2.bullet Repository
+		hr
+		ul
+			li Selain menyimpan struktur data, juga menyimpan <strong>sejarah</strong> data.
+			li Konsekuensi: <strong>tidak ada data yang benar-benar dihapus</strong>.
+			li Penghapusan malah akan <strong>memperbesar</strong> ukuran repository. Kenapa?
+
+	section
+		h2 Create (Init)
+		blockquote.
+			Perintah untuk membuat repository baru. Biasanya hanya
+			dilakukan sekali saja, di awal mulai proyek.
+
+	section
+		h2 Clone
+		blockquote.
+			Perintah untuk mengambil kopi repository lain. Clone 
+			dapat dilakukan terhadap repository manapun, selama
+			alamat repository diberikan dengan benar.
+
+	section
+		h2 Commit
+		blockquote.
+			Mencatat dan menyimpan perubahan data yang ada ke dalam repository.
+
+	section
+		h2.bullet Commit
+		hr
+		ul
+			li Melakukan modifikasi terhadap repository secara langsung.
+			li Perintah commit bersifat <strong>atomik</strong> untuk memastikan integritas repository.
+			li Biasanya pengguna harus memberikan catatan (log) perubahan.
+			li Catatan commit disimpan dalam sejarah.
+
+
+include presentation-footer
+include main-footer
