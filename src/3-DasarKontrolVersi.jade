@@ -98,10 +98,29 @@ article#presentation
 		h2 Branch (Cabang)
 		blockquote.
 			Branch merupakan operasi yang dilakukan ketika ingin
+			mencoba hal-hal yang berbeda untuk diaplikasikan terhadap
+			data yang sama.
 
 	section
 		h2 Branch
-		
+		img.big(src="images/KorraBranch.png")
+
+	section
+		h2.bullet Branch
+		hr
+		ul
+			li Satu repository bisa memiliki banyak branch
+			li Ketika melakukan clone, secara tidak langsung kita juga membuat branch
+			li Secara teknis, hasil clone bukanlah branch, secara konsep <strong>mirip</strong>
+			li Penggabungan branch dilakukan dengan merging (?)
+
+	section
+		h2.bullet Kegunaan Branch
+		hr
+		ul
+			li Eksperimen (kalau tidak cocok tinggal buang branch-nya)
+			li Menjaga agar kode utama bersih ketika bekerja
+			li Detailnya akan dijelaskan pada topik 5
 
 	section
 		h2 Merge
@@ -114,6 +133,41 @@ article#presentation
 		h2 Merge (secara Manual)
 		img(src="images/MergeTool.png")
 
+	section
+		h2 Push
+		blockquote.
+			Mengirimkan perubahan pada repository lokal ke
+			repository remote. Dengan kata lain: mengirimkan
+			data terbaru ke repository remote.
+
+	section
+		h2 Kembali ke gambar awal...
+		img.big(src="images/GitFlow.png")
+
+	section
+		h2 Jika baru memulai proyek...
+		img.big(src="images/GitFlowNewProject.png")
+
+	section
+		h2 Jika ingin melanjutkan pekerjaan...
+		img.big(src="images/GitFlowContinueWork.png")
+		p PS: 4 dan 5 opsional (jika bekerja pada repo utama)
+
+	section
+		h2 Jika baru bergabung dalam tim...
+		img.big(src="images/GitFlowNewMember.png")
+
+	section
+		h2 Atau bisa juga...
+		img.big(src="images/GitFlowAlternate.png")
+
+	section
+		h2.bullet Tentang Alur Kerja
+		hr
+		ul
+			li Yang dijelaskan hanyalah salah satu (dua) alur kerja
+			li Alur kerja setiap tim berbeda!
+			li Gunakan yang paling cocok untuk tim anda.
 
 include presentation-footer
 include main-footer
