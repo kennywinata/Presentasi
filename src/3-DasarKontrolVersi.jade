@@ -40,6 +40,16 @@ article#presentation
 			li Selain menyimpan struktur data, juga menyimpan <strong>sejarah</strong> data.
 			li Konsekuensi: <strong>tidak ada data yang benar-benar dihapus</strong>.
 			li Penghapusan malah akan <strong>memperbesar</strong> ukuran repository. Kenapa?
+			li Pada Kontrol Versi terpusat, hanya terdapat 1 repository yang digunakan semua orang.
+			li Pada Kontrol Versi terdistribusi, bisa saja setiap orang memiliki repository masing-masing.
+
+	section
+		h2 Repository (Kontrol Versi Terpusat)
+		img.big(src="images/RepositoryCVCS.png")
+
+	section
+		h2 Repository (Kontrol Versi Terdistribusi)
+		img.big(src="images/RepositoryDCVS.png")
 
 	section
 		h2 Create (Init)
@@ -67,6 +77,42 @@ article#presentation
 			li Perintah commit bersifat <strong>atomik</strong> untuk memastikan integritas repository.
 			li Biasanya pengguna harus memberikan catatan (log) perubahan.
 			li Catatan commit disimpan dalam sejarah.
+
+	section
+		h2 Pull / Update
+		blockquote.
+			Mengambil versi data terbaru dari repository luar (remote)
+			ke repository lokal. Dengan kata lain: mengambil
+			versi data terbaru dari server.
+
+	section
+		h2.bullet Pull / Update
+		hr
+		ul
+			li Terutama digunakan untuk sinkronasi dua repository
+			li Lokal mengambil perubahan terbaru dari remote
+			li Remote biasanya merupakan repository awal yang di-clone oleh lokal
+			li Jika local dan remote sudah tidak sama (sama-sama berubah)?
+
+	section
+		h2 Branch (Cabang)
+		blockquote.
+			Branch merupakan operasi yang dilakukan ketika ingin
+
+	section
+		h2 Branch
+		
+
+	section
+		h2 Merge
+		blockquote.
+			Operasi penggabungan dua cabang secara otomatis (jika bisa).
+			Ketika operasi tidak dapat dijalankan secara otomatis, maka kita harus
+			melakukan merge secara manual.
+
+	section
+		h2 Merge (secara Manual)
+		img(src="images/MergeTool.png")
 
 
 include presentation-footer
