@@ -25,9 +25,9 @@ article#presentation
 			pre.
 				git config --global core.editor vim
 				git config --global merge.tool vimdiff
-		p.
-			Pastikan vim maupun vimdiff dapat dijalankan langsung
-			melalui command line. (<a href="http://www.java.com/en/download/help/path.xml">Tutorial</a>)
+		ul.bullet
+			li Pastikan vim maupun vimdiff dapat dijalankan langsung melalui command line. (<a href="http://www.java.com/en/download/help/path.xml">Tutorial</a>)
+			li Anda dapat menggunakan editor dan merge tool apapun, selama editor tersebut dapat dijalankan langsung melalui command line.
 
 	section
 		h2 Cek Konfigurasi
@@ -132,6 +132,8 @@ article#presentation
 				#
 				#       README.md
 				nothing added to commit but untracked files present (use "git add" to track)
+		p.
+			(Perhatikan bagaimana file <code class="inline">README.md</code> dimasukkan ke dalam daftar "Untracked files".)
 
 	section
 		h2 Menambahkan File Baru ke dalam Repository
@@ -194,6 +196,61 @@ article#presentation
 			li <code class="inline language-bash">git add "nama file"</code>
 			li <code class="inline language-bash">git status # Cek file yang masuk staging, sudah benar?</code>
 			li <code class="inline language-bash">git commit -m "Pesan commit"</code>
+
+	section
+		h2.bullet Bagaimana Jika Ada File yang Tidak Ingin Dimasukkan ke Repo Selamanya?
+		hr
+		ul
+			li Contoh file: konfigurasi server, data autentikasi, konfigurasi IDE
+			li Biasanya berupa file unik yang memiliki isi berbeda-beda untuk tiap programmer
+			li Solusinya: <code class="inline">.gitignore</code>
+
+	section
+		h2.bullet .gitignore
+		hr
+		ul
+			li Merupakan sebuah file teks standar
+			li File ini berisi pola (pattern) untuk seluruh file yang tidak akan dibaca oleh git
+			li .gitignore biasanya dibuat <strong>sebelum</strong> init pertama
+			li Kenapa sebelum init pertama? Untuk memastikan tidak ada file-file yang tidak diperlukan di dalam repo.
+
+	section
+		h2 Cara Pembuatan .gitignore
+		p Esensinya sama seperti membuat file biasa
+		code.language-bash
+			pre.
+				$ touch .gitignore
+				$ vim .gitignore
+
+	section
+		h2 Isi .gitignore
+		p Isi dari .gitignore sendiri hanya berupa daftar file atau direktori yang tidak ingin disimpan. Contohnya:
+		code.language-bash
+			pre.
+				.*
+				logs
+				project/project
+				project/target
+				tmp
+				dist
+				bin
+		p.
+			Perhatikan bagaimana <code class="inline">.*</code> menandakan semua file dengan awalan
+			"." tidak akan dimasukkan ke dalam repo. File-file dengan awalan "." seringkali digunakan
+			aplikasi sebagai file konfigurasi.
+
+	section
+		h2.bullet Rangkuman Langkah Awal Penggunaan Git
+		hr
+		ul
+			li Konfigurasi Awal (username, email, editor, merge tool)
+			li Buat file <code class="inline">.gitignore</code>
+			li Init repository
+			li <i>code, code, code</i>
+			li Commit
+
+	section
+		h2 Pertanyaan?
 
 include presentation-footer
 include main-footer
