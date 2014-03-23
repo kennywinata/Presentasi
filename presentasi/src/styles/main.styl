@@ -2,14 +2,13 @@
 
 // variables!
 
-slide_width = 100%
-slide_height = 600px
-slide_background = #F0F0F0
+slide_width = 640px
+slide_height = 480px
+slide_background = #eaeaea
 
-slide_transition_length = .8s
+slide_transition_length = .6s
 slide_transition_easing = ease
-slide_transition_rotate_y = 60deg
-slide_transition_rotate_z = 120deg
+slide_transition_rotate_y = 90deg
 // Safari bugs out on 3d transform-origins, so we have to fake it
 slide_transition_nudge_x = -100px
 
@@ -34,10 +33,9 @@ bullet_transition_translate_x = 16px
 
 // bespoke.js layout styles
 
-article#presentation
+article
   transition: background slide_transition_length slide_transition_easing
   display: none
-  font-size: 1.8em
   &.bespoke-parent
     display: block
     position: absolute
@@ -50,7 +48,6 @@ article#presentation
       overflow: visible
       position: static
     perspective: 600px
-    margin-top: 50px
 
 .bespoke-slide
   transition:
@@ -83,12 +80,10 @@ article#presentation
     margin: 0
 
 .bespoke-before
-  //transform: translateX(slide_transition_nudge_x * -1) translateX(slide_width / -2) rotateY(slide_transition_rotate_y * -1) translateX(slide_width / -2)
-  transform: translateZ(slide_transition_nudge_x * -1) rotateY(slide_transition_rotate_y * -1) translateX(slide_width / -2) rotateZ(slide_transition_rotate_z)
+  transform: translateX(slide_transition_nudge_x * -1) translateX(slide_width / -2) rotateY(slide_transition_rotate_y * -1) translateX(slide_width / -2)
 
 .bespoke-after
-  // transform: translateX(slide_transition_nudge_x) translateX(slide_width / 2) rotateY(slide_transition_rotate_y) translateX(slide_width / 2)
-  transform: translate3d(50px, 0, -100px)
+  transform: translateX(slide_transition_nudge_x) translateX(slide_width / 2) rotateY(slide_transition_rotate_y) translateX(slide_width / 2)
   @media print
     transform: none
 
@@ -115,10 +110,6 @@ article#presentation
 
 .bespoke-bullet-active
   opacity: 1
-
-ol
-  li.bespoke-bullet 
-    text-align: left;
 
 // bespoke-scale styles
 
@@ -160,28 +151,16 @@ ol
 
 // prism styles
 
-code
-  display: block // fixes flexbox rendering issues in Safari
-  margin: 26px auto
+pre
   padding: 26px !important
-
-code.inline
-  background: transparent
-  display: inline-block
-  margin: 0
-  padding: 0 !important
+  border-radius: 8px
 
 // content styles
 
 body
-  background: slide_background
-  color: #3A4145
-  font-family: 'Open Sans', sans-serif
-
-blockquote
-  font-style: italic
-  max-width: 55%
-  text-align: left
+  font-family: helvetica, arial, sans-serif
+  font-size: 18px
+  color: #404040
 
 h1
   font-size: 72px
@@ -207,23 +186,13 @@ hr
 ul
   list-style: none
 
-section>li
+li
   margin-bottom: 12px
 
 p
   margin: 0 100px 12px
-  line-height: 1.2em
+  line-height: 22px
 
 a
   color: #0089f3
   text-decoration: none
-
-img
-  margin: 1.5em auto
-  max-width: 45%
-  height: auto
-
-img.big
-  margin: 1.5em auto
-  max-width: 100%
-  height: auto

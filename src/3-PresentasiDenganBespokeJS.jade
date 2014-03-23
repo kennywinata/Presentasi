@@ -41,6 +41,15 @@ article#presentation
 			li ... berjalan di Windows, OS X, Linux, Solaris, *BSD, dll
 
 	section
+		h2.bullet Installasi Node.js
+		hr
+		ul
+			li Unduh installer Node.js di <a href="https://github.com/markdalgleish/bespoke.js">website resminya.</a>
+			li Pilih sesuai dengan yang OS kalian. 
+			li Install di komputer.
+		img.big(src="images/NodeJsWebsite.png")
+
+	section
 		h2.bullet npm (node package manager)
 		hr
 		ul
@@ -101,6 +110,7 @@ article#presentation
 				npm install -g generator-bespoke
 				mkdir presentasi
 				cd presentasi
+				npm install -g yo
 				yo bespoke
 
 	section
@@ -118,12 +128,40 @@ article#presentation
 			li <a href="http://jade-lang.com/">coba langsung</a>
 
 	section
-		h2.bullet Stylus
-		hr
-		ul
-			li Preprosesor CSS (seperti SASS, LESS)
-			li menyederhanakan penulisan CSS
-			li <a href="http://learnboost.github.io/stylus/">website resmi stylus</a>
+		h2.bullet Jade Example
+		img.big(src="images/jade.png")
+
+	
+	section
+		h2.bullet Stylus Example
+		h3 Normal CSS
+		code.language-css
+			pre.
+				body {
+					font: 12px Helvetica, Arial, sans-serif;
+				}
+
+				a.button {
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					border-radius: 5px;
+				}
+	section
+
+		h2.bullet Stylus Example 2
+		h3 Stylus
+		code.language-css
+			pre.
+				border-radius()
+					-webkit-border-radius arguments
+					-moz-border-radius arguments
+					border-radius arguments
+
+				body
+					font 12px Helvetica, Arial, sans-serif
+
+				a.button
+					border-radius 5px
 
 	section
 		h2 Demo Penggunaan Bespoke.JS
