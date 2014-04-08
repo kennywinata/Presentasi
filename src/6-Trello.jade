@@ -18,6 +18,9 @@ article#presentation
 			li Mahasiswa memahami penggunaan Bug Reporting.
 
 	section
+		h1 Trello
+
+	section
 		h2.bullet Apa itu Trello?
 		hr
 		ul
@@ -27,7 +30,7 @@ article#presentation
 	
 	section
 		h2.bullet Trello
-		img(src="images/trello.png")
+		img.big(src="images/trello.png")
 		
 	section
 		h2.bullet Bagaimana cara kerja Trello?
@@ -46,6 +49,21 @@ article#presentation
 	section
 		h2.bullet List dan Card dalam Trello
 		img.big(src="images/trelloList.png")
+
+	section
+		h2.bullet Back of the Card
+		p Setiap "card" di Trello bisa memuat banyak informasi berharga. 
+		img.big(src="images/backOfCardTrello.png")
+
+	section
+		h2.bullet Detil dari Card
+		hr
+		ul
+			li Members -- Bisa digunakan untuk menset anggota development team yang mengerjakan User Story tersebut.
+			li Labels -- Bisa digunakan untuk memberi tanda kepada card.
+			li Checklist -- Bisa digunakan untuk me-list-kan pengujian yang harus dilakukan sebelum card dipindahkan ke done.
+			li Due Date -- Bisa digunakan untuk menset limit waktu pengerjaan user story.
+			li Attachment -- Bisa digunakan untuk informasi penting lainnya.
 
 	section
 		h2.bullet Trello dan SCRUM
@@ -73,18 +91,40 @@ article#presentation
 		ul
 			li Di awal Sprint Planning, User Story dalam Backlog dipindahkan ke Sprint Backlog.
 			li Sprint Backlog memuat semua user story yang harus diselesaikan.
-			li Setiap kali anggota development team akan mengerjakan satu card, card tersebut dipindahkan ke "On Progress" list.
+			li Setiap kali anggota development team akan mengerjakan satu card, card tersebut dipindahkan ke "In Progress" list.
 			li Jika sudah selesai dipindahkan ke "Done" list.
+			li Jika sprint sudah selesai maka di-archive dan buat card baru.
 
 	section
-		h2.bullet Back of the Card
-		p Setiap "card" di Trello bisa memuat banyak informasi berharga. 
+		h2.bullet Trello Beberapa Board
+		p Jika Proyek besar atau tim banyak.
+		p Dengan Satu board, bisa terlalu ribet.
+		p Kurang detil di setiap board
+	
+	section
+		h2.bullet Trello Beberapa Board (Lanjutan)
 		ul
-			li Members -- Bisa digunakan untuk menset anggota development team yang mengerjakan User Story tersebut.
-			li Labels -- Bisa digunakan untuk memberi tanda kepada card tertentu.
-			li Checklist -- Bisa digunakan untuk me-list-kan pengujian yang harus dilakukan sebelum card dipindahkan ke done.
-			li Due Date -- Bisa digunakan untuk menset limit waktu pengerjaan user story.
-			li Attachment -- Bisa digunakan untuk informasi penting lainnya.
+			li Satu board khusus untuk Backlog yang terdiri dari "Ideas", "Requirement Gathering", "Ready for Estimating" dan "Sprint Candidates" list
+			li Satu Board khusus untuk Sprint yang terdiri dari "Sprint Backlog", "In Progress", "QA Bug Report",  "Ready for QA", "Ready for Release" dan "Done".
+	
+	section
+		h2.bullet Backlog Board
+		ul
+			li Product Owner, bertanggung jawab penuh untuk memberi priotisasi di setiap card.
+			li "Ideas" hanyalah list berisi ide yang masih abstrak.
+			li "Requirement Gathering" berisi user story yang sedang dibentuk.
+			li "Ready for Estimating" berisi user story yang sudah dibentuk dan siap diestimasi dan diberi priotisasi.
+			li "Sprint Candidates" berisi user story yang siap dipindahkan ke Spring Board
+
+	section
+		h2.bullet Sprint Board
+		ul
+			li "Sprint Backlog" berisikan User Story yang berasal dari Backlog board. Diurut berdasar prioritas.
+			li "In Progress" berisikan User Story yang sedang dikembangkan oleh Development Team.
+			li "QA bug report" berisikan user story yang masih terdapat bug. Dipindahkan oleh Tester.
+			li "Ready for QA" berisikan user story yang selesai dikembangkan dan siap untuk dites oleh Tester.
+			li "Ready for Release" berisikan user story yang sudah diuji oleh Tester dan siap untuk direlease.
+			li "Done" berisikan user story yang sudah dirilis.
 
 	section
 		h1 Bug Tracking
