@@ -7,7 +7,7 @@ include menu
 article#presentation
 
 	section
-		h1 Trello & Bug Tracking
+		h1 Trello &amp; Bug Tracking
 		p Teknologi Kolaborasi Pengembangan Perangkat Lunak
 
 	section
@@ -24,7 +24,7 @@ article#presentation
 			li Trello merupakan aplikasi manajemen proyek yang dikembangkan oleh Fog Creek Software
 			li Trello pada dasarnya menggunakan sebuah paradigma manajemen proyek yang bernama Kanban.
 			li Trello gratis digunakan selama 
-		img.big(src="images/trello.png")
+		img(src="images/trello.png")
 		
 	section
 		h2.bullet Bagaimana cara kerja Trello?
@@ -43,6 +43,108 @@ article#presentation
 	section
 		h2.bullet List dan Card dalam Trello
 		img.big(src="images/trelloList.png")
+
+	section
+		h1 Bug Tracking
+
+	section
+		h2 Bug?
+		blockquote.
+			A software bug is an error, flaw, failure, or fault in a computer program 
+			or system that causes it to produce an incorrect or unexpected result, or 
+			to <b>behave in unintended ways</b>.
+			<small>Wikipedia</small>
+
+	section
+		h2.bullet Bug Tracking?
+		hr
+		ul
+			li Dalam tahap testing maupun maintenance, seringkali kita menemukan bug
+			li Kesalahan dan perbaikannya perlu dicatat agar kesalahan tidak terjadi dua kali
+			li Untuk mencatat digunakan software "Bug Tracking"
+			li Contoh software bug tracking populer: <a href="www.mantisbt.org">Mantis</a>, <a href="http://www.bugzilla.org/">BugZilla</a>
+			li Seringkali di-bundle bersamaan dengan sistem manajemen pengembangan (<a href="http://github.com/">github</a>, <a href="http://www.redmine.org/">redmine</a>)
+
+	section
+		h2 Proses Pelaporan Bug
+		img.big(src="images/BugTrackingFlow.png")
+
+	section
+		h2 Langkah 1: User / QA Melaporkan Bug ke Tim
+		img.big(src="images/BugTrackingFlowStep1.png")
+
+	section
+		h2 Langkah 2: Tim Menentukan Siapa yg Memperbaiki Bug
+		img.big(src="images/BugTrackingFlowStep2.png")
+
+	section
+		h2 Langkah 3: Berikan Hasil Perbaikan Bug ke User / QA
+		img.big(src="images/BugTrackingFlowStep3.png")
+
+	section
+		h2 Contoh Sistem Bug Report
+		p <a href="https://github.com/ValveSoftware/source-sdk-2013/issues">Github Bug Report</a>
+
+	section
+		h2 Menulis Bug Report yang Baik
+
+	section
+		h2.bullet Sebelum Menulis Bug Report
+		hr
+		p Pastikan terlebih dahulu:
+		ol
+			li Bug belum pernah dilaporkan (gunakan search)
+			li Software sudah versi paling baru
+
+	section
+		h2.bullet Bug Report yang Baik
+		hr
+		p Bug report yang baik memiliki komponen berikut:
+		ol
+			li Ringkasan (deskripsi) bug yang jelas
+			li Langkah reproduksi bug yang jelas
+			li Stacktrace / Error Code jika terdapat exception
+
+	section
+		h2.bullet Ringkasan Bug
+		hr
+		ul
+			li Jelaskan masalah yang muncul secara singkat
+			li Jangan berikan solusi
+			li Jangan menghakimi / menyerang tim pengembang
+
+	section
+		h2.bullet Ringkasan Bug
+		hr
+		ul
+			li Baik: "Membatalkan dialog File Copy membuat sistem berhenti bekerja"
+			li Buruk: "Software crash. Sistem tidak beres. Pengembang tidak kompeten."
+
+	section
+		h2.bullet Langkah Reproduksi Bug
+		hr
+		ol
+			li <b>Bagian paling penting</b> dari Bug Report
+			li Kalau pengembang tidak bisa mereproduksi bug, akan sulit memperbaiki bug
+			li Harus detil sedetil-detilnya
+			li Lebih baik kalau ditulis langkah demi langkah
+			li Tuliskan apa yang diharapkan terjadi, dan apa yang sebenarnya terjadi
+
+	section
+		h2.bullet Langkah Reproduksi Bug (Buruk)
+		hr
+		ol
+			li Buka Gmail pada Firefox
+			li Tampilan rusak
+
+	section
+		h2.bullet Langkah Reproduksi Bug (Baik)
+		hr
+		ol
+			li Tekan Ctrl+N untuk membuka jendela baru pada Firefox
+			li Isikan https://mail.google.com pada Address Bar dan tekan Enter
+			li Diharapkan: tampilan inbox Gmail
+			li Yang muncul: pesan kesalahan "Your browser does not support cookies (error -91)"
 
 include presentation-footer
 include main-footer
