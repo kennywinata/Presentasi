@@ -1,0 +1,22 @@
+- var pageTitle = 'Tugas Bespoke'
+
+include presentation-header
+
+include menu
+
+article#presentation
+
+	section
+		h1 Tugas BeSpoke Part I
+		p Teknologi Kolaborasi Pengembangan Perangkat Lunak
+
+	section
+		h2.bullet Spesifikasi Tugas
+		ul
+			li Bentuk tim dengan anggota 4 orang
+			li Tentukan peran masing-masing anggota: 1 Scrummaster + 3 developer
+			li Pilih topik dalam bidang apapun selama tidak mengandung SARA
+			li 
+
+include presentation-footer
+include main-footer
