@@ -1,0 +1,117 @@
+- var pageTitle = 'Time Machine'
+
+include presentation-header
+
+include menu
+
+article#presentation
+	section
+		h1 Time Machine
+		h2 Berkelana Menelusuri Ruang Waktu
+		p Teknik Kolaborasi TI
+
+	section
+		h2.bullet Kembali ke Waktu Lampau
+		hr
+		ul
+			li Kadang-kadang kita perlu mengembalikan atau melihat kode versi lama
+			li Mungkin ingin melihat satu file saja (contoh: method yang sudah dihapus dulu)
+			li Atau bisa juga ingin melihat banyak file (contoh: fitur yang tidak jadi ditambahkan)
+
+	section
+		h2.bullet Fitur Mesin Waktu Git
+		hr
+		ul
+			li Fitur utama: mengembalikan kode ke commit lama, membatalkan commit, membersihkan staging area
+			li <strong>Peringatan:</strong> penggunaan beberapa fitur mesin waktu berbahaya karena perubahan tidak dapat dikembalikan
+
+	section
+		h2.bullet Penelusuran Commit Lama
+		code.language-bash
+			pre.
+				$ git checkout <commit> <file>
+		p Catatan:
+		ol
+			li <code class="inline language-bash">&lt;commit&gt;</code> diisi nomor commit. 6 karakter pertama saja.
+			li <code class="inline language-bash">&lt;file&gt;</code> diisi file yang ingin dilihat pada commit di atas. Opsional.
+			li Perintah ini juga digunakan untuk percabangan (pembahasan dua minggu depan)
+
+	section
+		h2.bullet Perintah Git Checkout
+		hr
+		ul
+			li Memeriksa versi lain dari kode dari tiga sisi, yaitu: file, commit, dan cabang.
+			li Untuk hari ini kita hanya akan berfokus pada dua sisi: file dan commit.
+			li Versi lain dari commit akan mengganti isi seluruh direktori menjadi commit tersebut.
+			li Versi lain file hanya mengubah file yang relevan saja.
+
+	section
+		h2 Sebelum checkout...
+		p Harus mengetahui commit mana yang ingin dikunjungi terlebih dahulu
+		img(src="images/GitCheckoutCommitValue.png")
+
+	section
+		h2 Mari coba checkout untuk commit:
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$ git checkout e5259e0
+				Note: checking out 'e5259e0'.
+
+				# pesan panjang...
+
+				HEAD is now at e5259e0... tweak styles
+
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill ((e5259e0...))
+				$
+
+	section
+		h2.bullet Commit Checkout Notes
+		hr
+		ol
+			li <code class="inline language-bash">(master)</code> menjadi <code class="inline language-bash">((e5259e0...))</code>
+			li File yang ada di direktori utama sekarang adalah file pada versi pada commit <code class="inline language-bash">e5259e0...</code>
+			li Kita bebas melakukan kompilasi, test, hapus, diff, dkk pada file ini
+			li Segala perubahan yang dilakukan <strong>tidak akan tersimpan</strong>
+
+	section
+		h2 Kembali ke Master
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill ((e5259e0...))
+				$ git checkout master
+				Previous HEAD position was e5259e0... tweak styles
+				Switched to branch 'master'
+
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$
+
+	section
+		h2 Mari coba checkout untuk file:
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$ git checkout e5259e0 package.json
+
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$
+
+	section
+		h2.bullet File Checkout Notes
+		hr
+		ol
+			li Berbeda dengan checkout pada commit, di sini hanya 1 file yang berubah
+			li Perubahan file tersebut <strong>dapat tersimpan dalam git</strong> (coba jalankan <code class="inline language-bash">git status</code>)
+
+	section
+		h2 Kembali ke File Terbaru
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$ git checkout HEAD package.json
+
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$
+
+include presentation-footer
+include main-footer
