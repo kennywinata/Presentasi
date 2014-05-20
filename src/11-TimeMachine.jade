@@ -337,5 +337,44 @@ article#presentation
 			li Perintah akan menghapus seluruh data, baik di staging maupun commit.
 			li Guankan dengan <strong>sangat hati-hati</strong>.
 
+	section
+		h2 Fungsi Git Reset 5 (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git log --oneline -2
+				946981a Jadi apa
+				3894f43 kode.txt
+
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git status
+				# Keterangan Unstaged...
+				#
+				#       modified:   FAQs.md
+				#       modified:   kode.txt
+				#
+				no changes added to commit (use "git add" and/or "git commit -a")
+
+	section
+		h2 Fungsi Git Reset 5 (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git reset --hard 3894f43
+				HEAD is now at 3894f43 kode.txt
+
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git status
+				# On branch master
+				nothing to commit, working directory clean
+
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git log --oneline -2
+				3894f43 kode.txt
+				f97fe05 git ignore
+
+	section
+		h2 Pertanyaan?
+
 include presentation-footer
 include main-footer
