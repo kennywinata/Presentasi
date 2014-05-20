@@ -195,9 +195,7 @@ article#presentation
 			pre.
 				bert@FEBRONIA ~/Desktop/code/tibk (master)
 				$ git status
-				# On branch master
-				# Changes to be committed:
-				#   (use "git reset HEAD <file>..." to unstage)
+				#   keterangan file staging..
 				#
 				#       modified:   FAQs.md
 				#       modified:   kode.txt
@@ -214,15 +212,11 @@ article#presentation
 			pre.
 				bert@FEBRONIA ~/Desktop/code/tibk (master)
 				$ git status
-				# On branch master
-				# Changes to be committed:
-				#   (use "git reset HEAD <file>..." to unstage)
+				# Keterangan file staging...
 				#
 				#       modified:   kode.txt
 				#
-				# Changes not staged for commit:
-				#   (use "git add <file>..." to update what will be committed)
-				#   (use "git checkout -- <file>..." to discard changes in working directory)
+				# Keterangan file non-staging...
 				#
 				#       modified:   FAQs.md
 				#
@@ -240,9 +234,7 @@ article#presentation
 			pre.
 				bert@FEBRONIA ~/Desktop/code/tibk (master)
 				$ git status
-				# On branch master
-				# Changes to be committed:
-				#   (use "git reset HEAD <file>..." to unstage)
+				# Keterangan file staging...
 				#
 				#       modified:   FAQs.md
 				#       modified:   kode.txt
@@ -269,6 +261,81 @@ article#presentation
 				#       modified:   kode.txt
 				#
 				no changes added to commit (use "git add" and/or "git commit -a")
+
+	section
+		h2.bullet Fungsi Git Reset 3
+		p Membuang <strong>semua</strong> file dari staging area dan mengembalikan isi file ke commit sebelumnya:
+		code.language-bash
+			pre.
+				$ git reset --hard
+		ol
+			li Seluruh perubahan file yang belum di-commit <strong>akan hilang</strong>
+			li Gunakan dengan sangat hati-hati, karena isi file tidak dapat dikembalikan lagi
+
+	section
+		h2 Fungsi Git Reset 3 (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git status
+				# Keterangan file staging...
+				#
+				#       modified:   FAQs.md
+				#       modified:   kode.txt
+				#
+				no changes added to commit (use "git add" and/or "git commit -a")
+
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git reset --hard
+				HEAD is now at f4c1204 Tambah 1 line
+
+	section
+		h2 Fungsi Git Reset 3 (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git status
+				# On branch master
+				nothing to commit, working directory clean
+
+	section
+		h2.bullet Fungsi Git Reset 4
+		p Mengembalikan kode ke &lt;commit&gt;, tanpa menghapus file di staging:
+		code.language-bash
+			pre.
+				$ git reset <commit>
+		ol
+			li Biasanya digunakan untuk merapikan sejarah
+			li Misal: beberapa commit eksperimen yang tidak ingin dimasukkan ke sejarah
+			li Bisa juga menggunakan branch (pembahasan dua minggu depan)
+
+	section
+		h2 Fungsi Git Reset 4 (cont.)
+		p Asumsikan kita mengubah FAQs.md dan kode.txt:
+		code.language-bash
+			pre.
+				$ git reset 946981
+				Unstaged changes after reset:
+				M       FAQs.md
+				M       kode.txt
+
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				# Keterangan Unstaged...
+				#
+				#       modified:   FAQs.md
+				#       modified:   kode.txt
+				#
+				no changes added to commit (use "git add" and/or "git commit -a")
+
+	section
+		h2.bullet Fungsi Git Reset 5
+		p Mengembalikan kode ke &lt;commit&gt; dan menghapus file di staging:
+		code.language-bash
+			pre.
+				$ git reset --hard <commit>
+		ol
+			li Perintah akan menghapus seluruh data, baik di staging maupun commit.
+			li Guankan dengan <strong>sangat hati-hati</strong>.
 
 include presentation-footer
 include main-footer
