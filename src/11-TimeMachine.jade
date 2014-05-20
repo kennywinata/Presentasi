@@ -113,5 +113,162 @@ article#presentation
 				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
 				$
 
+	section
+		h2.bullet Mengubah Sejarah
+		hr
+		ul
+			li Git Checkout hanya memungkinkan kita untuk melihat isi kode lama
+			li Terkadang, kita ingin mengubah sejarah kode (mis: ada bug parah di kode baru)
+			li Untuk mengembalikan kode ke versi lama dan mengubah sejarahnya, kita dapat menggunakan Git Revert
+
+	section
+		h2.bullet Git Revert
+		p Perintah:
+		code.language-bash
+			pre.
+				$ git revert <commit>
+		ol
+			li Revert akan membuat commit baru secara otomatis
+			li Ketika melakukan revert, sejarah kode tidak akan hilang
+			li Karenanya, operasi ini bisa dikatakan "aman" karena perubahan tercatat dalam sejarah
+
+	section
+		h2 Contoh Penggunaan Revert (1)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$ git log --oneline -2
+				7c1182f allow local sauce testing
+				b3a1f69 Update travis encrypted variables
+
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$ git revert b3a1f69
+				[master 7fa56ce] Revert "Update travis encrypted variables"
+				1 file changed, 2 insertions(+), 2 deletions(-)
+
+	section
+		h2 Contoh Penggunaan Revert (2)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$ git log --oneline -3
+				7fa56ce Revert "Update travis encrypted variables"
+				7c1182f allow local sauce testing
+				b3a1f69 Update travis encrypted variables
+
+				bert@FEBRONIA ~/Desktop/projects/mikroskil/quill (master)
+				$
+
+	section
+		h2 Ilustrasi Proses Revert
+		img(src="images/GitRevertIllustration.png")
+
+	section
+		h2.bullet Menghapus Sejarah
+		hr
+		ul
+			li Terkadang mengubah sejarah saja tidak cukup
+			li Perintah utama: Git Reset
+
+	section
+		h2.bullet Git Reset
+		p Perintah:
+		code.language-bash
+			pre.
+				$ git reset <option> <file>
+		ol
+			li Secara sederhana sama dengan Checkout, tapi perubahan data dicatat
+			li Seperti Checkout, Reset memiliki banyak konfigurasi
+			li Bisa digunakan untuk: membersihkan staging area, menghapus sejarah
+			li Gunakan hanya untuk repository lokal. Ingat bahwa sejarah <strong>terhapus selamanya</strong>
+
+	section
+		h2 Fungsi Git Reset 1
+		p Membuang <strong>satu</strong> file dari staging area:
+		code.language-bash
+			pre.
+				$ git reset <file>
+
+	section
+		h2 Fungsi Git Reset 1 (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git status
+				# On branch master
+				# Changes to be committed:
+				#   (use "git reset HEAD <file>..." to unstage)
+				#
+				#       modified:   FAQs.md
+				#       modified:   kode.txt
+				#
+
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git reset FAQs.md
+				Unstaged changes after reset:
+				M       FAQs.md
+
+	section
+		h2 Fungsi Git Reset 1 (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git status
+				# On branch master
+				# Changes to be committed:
+				#   (use "git reset HEAD <file>..." to unstage)
+				#
+				#       modified:   kode.txt
+				#
+				# Changes not staged for commit:
+				#   (use "git add <file>..." to update what will be committed)
+				#   (use "git checkout -- <file>..." to discard changes in working directory)
+				#
+				#       modified:   FAQs.md
+				#
+
+	section
+		h2 Fungsi Git Reset 2
+		p Membuang <strong>semua</strong> file dari staging area:
+		code.language-bash
+			pre.
+				$ git reset
+
+	section
+		h2 Fungsi Git Reset 2 (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git status
+				# On branch master
+				# Changes to be committed:
+				#   (use "git reset HEAD <file>..." to unstage)
+				#
+				#       modified:   FAQs.md
+				#       modified:   kode.txt
+				#
+
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git reset
+				Unstaged changes after reset:
+				M       FAQs.md
+				M       kode.txt
+
+	section
+		h2 Fungsi Git Reset 2 (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tibk (master)
+				$ git status
+				# On branch master
+				# Changes not staged for commit:
+				#   (use "git add <file>..." to update what will be committed)
+				#   (use "git checkout -- <file>..." to discard changes in working directory)
+				#
+				#       modified:   FAQs.md
+				#       modified:   kode.txt
+				#
+				no changes added to commit (use "git add" and/or "git commit -a")
+
 include presentation-footer
 include main-footer
