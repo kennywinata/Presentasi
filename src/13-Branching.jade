@@ -37,10 +37,32 @@ article#presentation
 				$ git checkout -b <nama_cabang>
 
 	section
+		h2 Buat Cabang Baru dan Pindah (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tib (master)
+				$ git checkout -b experiment
+				Switched to a new branch 'experiment'
+
+				bert@FEBRONIA ~/Desktop/code/tib (experiment)
+				$
+
+	section
 		h2 Kembali ke Cabang Utama
 		code.language-bash
 			pre.
 				$ git checkout master
+
+	section
+		h2 Kembali ke Cabang Utama (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tib (experiment)
+				$ git checkout master
+				Switched to branch 'master'
+
+				bert@FEBRONIA ~/Desktop/code/tib (master)
+				$
 
 	section
 		h1 Eksperimen!
@@ -71,10 +93,28 @@ article#presentation
 
 	section
 		h2 Melihat Daftar Cabang (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/code/tib (master)
+				$ git branch
+				experiment
+				* master
+
+	section
+		h2 Melihat Daftar Cabang (cont.)
 		p Plus: melihat commit terakhir
 		code.language-bash
 			pre.
 				$ git branch -v
+
+	section
+		h2 Melihat Daftar Cabang (cont.)
+		code.language-bash
+			pre.
+				bert@FEBRONIA ~/Desktop/projects/mhstest/ACE (master)
+				$ git branch -v
+				* master      06985e8 [ahead 6] MERGE from MASTER OK
+				testinglagi 06985e8 MERGE from MASTER OK
 
 	section
 		h2 Melihat Daftar Cabang (cont.)
