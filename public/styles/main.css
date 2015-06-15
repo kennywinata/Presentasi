@@ -1,12 +1,15 @@
 body {
-  background: #ccd445;
-  color: #3a4145;
+  background: #c51111;
+  background-image: url("http://farm8.staticflickr.com/7384/8730654121_05bca33388_z.jpg");
+  opacity: 20;
+  background-size: 100%;
+  color: #625be6;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.7em;
   line-height: 1.6em;
 }
 h2 {
-  color: #a0a215;
+  color: #625be6;
   font-size: 2em;
   letter-spacing: -1px;
   font-weight: bold;
